@@ -4,7 +4,7 @@ import { removeJwt } from "../Slices/JwtSlice";
 
 const axiosInstance = axios.create({
     // baseURL: 'http://localhost:8080'
-    baseURL: 'https://jobportal-backend-3lb9.onrender.com'
+    baseURL: 'https://jobportal-backend-3lb9.onrender.com/'
 });
 
 axiosInstance.interceptors.request.use(
