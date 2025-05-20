@@ -1,9 +1,12 @@
-import axios from 'axios';
-const base_url = "http://localhost:8080/auth/"
-const loginUser = async (login:any)=> {
-    return axios.post(`${base_url}login`, login)
-        .then((result:any) => result.data)
-        .catch((error:any) =>{throw error;});
-}
+import axiosInstance from "../Interceptor/AxiosInterceptor";
 
-export {loginUser};
+const loginUser = async (login: any) => {
+  try {
+    const response = await axiosInstance.post('/auth/login', login);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export { loginUser };
